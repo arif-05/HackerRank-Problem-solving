@@ -3,7 +3,8 @@
 #include<iostream>
 using namespace std;
 
-vector<int> insertion_sort(int n, vector<int> &arr){
+void insertion_sort(int n, vector<int> &arr){
+    for(int k = n-1; k>=0; k--){
     int temp = arr[n-1];
     int i = n-2;
     while(i >= 0 && arr[i]>temp){
@@ -15,6 +16,7 @@ vector<int> insertion_sort(int n, vector<int> &arr){
         cout<<endl;
     }
     arr[i+1] = temp;
+    }
     
      for (int j = 0; j < n; j++) {
         cout << arr[j] << " ";
@@ -33,8 +35,5 @@ int main(){
 
     insertion_sort(n,arr);
    
-
-
-
     return 0;
 }
