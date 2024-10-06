@@ -5,10 +5,19 @@ using namespace std;
 
 vector<int> counting_sort(vector<int>arr){
     vector<int> count(100,0);
+    vector<int> sorted;
     for(int i=0; i<arr.size(); i++){
         count[arr[i]]++;
     }
-    return count;
+    
+    for(int i = 0; i<count.size(); i++){
+        while(count[i]>0){
+            sorted.push_back(i);
+            count[i]--;
+        }
+    }
+
+    return sorted;
 }
 
 int main(){
